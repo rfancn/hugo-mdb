@@ -1,0 +1,12 @@
+name = "hugo-mdb"
+license = "MIT"
+licenselink = "https://github.com/rfancn/hugo-mdb/blob/master/LICENSE"
+description = "bootstrap material design"
+homepage = "http://www.hdget.com/"
+tags = ["material", "bootstrap", "subdir", "auto category"]
+features = ["auto breadcrumb", "material design"]
+min_version = "0.31"
+
+[author]
+  name = "Ryan Fan"
+  homepage = "http://www.hdget.com"

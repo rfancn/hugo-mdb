@@ -1,0 +1,14 @@
+<div class="postsummary-header">
+    <p class="h4 h4-responsive"><a href="{{ .RelPermalink }}">{{ .Title }}</a></p>
+    <small class="text-muted">{{ .Date.Format "2006-01-02" }}</small>
+</div>
+<div class="postsummary-content">
+    <p>{{- .Summary -}}</p>
+    {{ if .Truncated }}
+        <!-- This <div> includes a read more link, but only if the summary is truncated... -->
+        <a href="{{ .RelPermalink }}" class="btn btn-info waves-effect waves-light">Read More…</a>
+    {{ end }}
+</div>
+
+
+

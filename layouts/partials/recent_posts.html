@@ -1,0 +1,14 @@
+{{ if .posts }}
+{{ $config := .config }}
+<ul class="list-unstyled">
+    {{ range .posts }}
+    <li>
+        <a title="{{ .Title }}" href="{{ .URL | relLangURL }}">
+            <!-- must use 2006-01-02T15:04:05Z07:00 layout -->
+            <small>[{{ .Date.Format "2006-01-02" }}]</small>
+            <span>{{ .Title | truncate (index $config.truncatesize .Lang) }}</span>
+        </a>
+    </li>
+    {{ end }}
+</ul>
+{{ end }}

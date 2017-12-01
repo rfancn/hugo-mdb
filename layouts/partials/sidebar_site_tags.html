@@ -1,0 +1,10 @@
+{{ if .Site.Taxonomies.tags }}
+<div class="sidebar-content">
+    <h5>{{ i18n "SIDEBAR_HEADER_TAGS" }}</h5>
+    <span class="tags">
+        {{ range $tagname, $taxonomy := .Site.Taxonomies.tags }}
+        <span class="badge badge-pill light-blue"><a href="{{ "/tags/" | relLangURL }}{{  $tagname | urlize }}">{{ $tagname }}</a></span>
+        {{ end }}
+    </span>
+</div>
+{{ end }}

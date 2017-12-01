@@ -1,0 +1,10 @@
+{{ if .Params.tags }}
+<div class="sidebar-content">
+    <h5>{{ i18n "SIDEBAR_HEADER_TAGS" }}</h5>
+    <span class="tags">
+        {{ range .Params.tags }}
+        <span class="badge badge-pill light-blue"><a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a></span>
+        {{ end }}
+    </span>
+</div>
+{{ end }}

@@ -1,0 +1,18 @@
+- id: MORE_BUTTON_TEXT
+  translation: Read More...
+- id: HOME_CARD_READING_TITLE
+  translation: Reading Fun
+- id: HOME_CARD_READING_TEXT
+  translation: Reading gives muscle to your memory
+- id: HOME_CARD_BLOG_TITLE
+  translation: Blog Myself
+- id: HOME_CARD_BLOG_TEXT
+  translation: Express Yourself and Share Your Passions
+- id: HOME_CARD_PROJECT_TITLE
+  translation: Project Collection
+- id: HOME_CARD_PROJECT_TEXT
+  translation: Collection of small projects
+- id: SIDEBAR_HEADER_TAGS
+  translation: Tags
+- id: SIDEBAR_HEADER_CATEGORIES
+  translation: Categories

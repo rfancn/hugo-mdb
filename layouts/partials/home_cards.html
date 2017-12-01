@@ -1,0 +1,25 @@
+{{ $moreButtonText := i18n .Site.Params.MoreButton }}
+{{ range .Site.Params.HomeCards.card }}
+<div class="col-sm">
+    <!--Card-->
+    <div class="card">
+    <!--Card image-->
+    <div class="view overlay hm-white-slight">
+        <img class="img-fluid" src="{{ .img }}" />
+        <a href="{{ .link }}">
+            <div class="mask"></div>
+        </a>
+    </div>
+    <!--/.Card image-->
+
+    <!--Card content-->
+    <div class="card-block">
+        <h4 class="card-title">{{ i18n .title }}</h4>
+        <p class="card-text">{{ i18n .text }}</p>
+        <a href="{{ .link }}" class="btn btn-info waves-effect waves-light">{{ $moreButtonText }}</a>
+    </div>
+    <!--/.Card content-->
+    </div>
+</div>
+{{ end }}
+

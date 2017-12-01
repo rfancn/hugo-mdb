@@ -1,0 +1,10 @@
+{{ $config := .Site.Params.HomeRecentPosts }}
+{{ if eq .Lang "zh" }}
+    {{ $posts := first $config.listSize (where .Site.AllPages "Kind" "page") }}
+    {{ partial "recent_posts.html" (dict "posts" $posts "config" $config) }}
+{{ else }}
+    {{ $posts := first $config.listSize .Site.RegularPages }}
+    {{ partial "recent_posts.html" (dict "posts" $posts "config" $config) }}
+{{ end }}
+
+

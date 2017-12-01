@@ -1,0 +1,24 @@
+{{ define "main" }}
+
+{{ $currentDir := .Dir }}
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+            {{ partial "breadcrumb.html" . }}
+
+            {{ $paginator := .Paginate ( where (where .Site.AllPages "Kind" "page") "Path" "contains" $currentDir ) }}
+            {{ range $paginator.Pages }}
+                {{ partial "post_summary.html" . }}
+            {{ end }}
+
+            <!-- navigation -->
+            {{ partial "pagination.html" . }}
+        </div>
+        <div class="col-sm-3">
+            {{ partial "google_adsense.html" .Site.Params.GoogleAdsense.Sidebar }}
+            {{ partial "sidebar_site_tags.html" . }}
+        </div>
+    </div>
+</div>
+
+{{ end }}

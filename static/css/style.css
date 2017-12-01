@@ -1,0 +1,117 @@
+/* Override mdb */
+body {
+    font-family: Helvetica, Arial, "Microsoft Yahei", "微软雅黑", STXihei, "华文细黑", sans-serif;
+}
+
+a {
+    color: #2FA4E7;
+}
+
+
+ /* TEMPLATE STYLES */
+main{
+    padding-top: 0.5rem;
+    padding-bottom: 1rem;
+}
+
+main.home {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+main.container {
+    padding: 0;
+}
+
+.extra-margins {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.jumbotron {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.navbar {
+    background-color: #2FA4E7 !important;
+}
+
+footer.page-footer {
+    background-color: #3b295a;
+    margin-top: 2rem;
+}
+
+/* post */
+.post-header {
+    margin: 1rem 0;
+    padding: 0 .5rem;
+    text-align: center;
+}
+
+.post-content {
+    padding: 0 .5rem;
+}
+
+.post-content ol,ul {
+    padding-left: 1rem;
+}
+
+.post-content p {
+    margin-bottom: 0.5rem;
+}
+
+.post-content h1,h2,h3,h4,h5,h6 {
+    font-size: 130%;
+    font-weight: 400;
+    padding: 0.5rem 0;
+}
+
+.post-content img[src$='#img-fluid'] {
+    max-width: 100%;
+    height: auto;
+}
+
+.post-content blockquote {
+    padding: 1rem 1rem;
+    margin: 1rem 0;
+    border: 1px solid #eee;
+    border-left-width: .25rem;
+    border-radius: .25rem;
+    font-size: 1rem;
+    border-left-color: #f0ad4e;
+}
+
+/* post summary */
+.postsummary-header {
+    margin: 1rem 0;
+}
+
+/* Partials */
+.breadcrumb {
+    padding: .75rem .5rem;
+}
+
+/* sidebar */
+.sidebar-content {
+    padding: 0.5rem 0;
+}
+
+.related-pages li {
+    list-style-type: disc;
+    padding-bottom: 5px;
+}
+
+ul.related-pages {
+    padding-left: 1rem;
+    margin-bottom: 0;
+}
+
+.googleadsense {
+    padding: 0.5rem 0;
+    min-height: 30px;
+}
+/* tags */
+.tags span a {
+    color: #FFFFFF;
+}

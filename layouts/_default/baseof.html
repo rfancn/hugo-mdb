@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.Language.Lang }}">
+<head>
+    {{ partial "site_head_meta.html" . }}
+    <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
+    {{ partial "site_head_css.html" . }}
+    {{ partial "site_head_js.html" . }}
+    {{ block "extra_css" . }}{{ end }}
+</head>
+<body>
+    <header>
+    {{ block "header" . }}
+    {{- partial "nav.html" . -}}
+    {{ end }}
+    </header>
+
+    <main>
+    {{ block "main" . }}{{ end }}
+    </main>
+
+    <footer>
+    {{ block "footer" . }}{{ end }}
+    </footer>
+
+    {{ partial "site_bottom_js.html" . }}
+    {{ block "extra_js" . }}{{ end }}
+    {{ template "_internal/google_analytics.html" . }}
+</body>
+</html>

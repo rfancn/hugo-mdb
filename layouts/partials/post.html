@@ -1,0 +1,15 @@
+<div class="post-header">
+<p class="h3 h3-responsive">{{ .Title }}</p>
+<small class="text-muted">{{ .Date.Format "2006-01-02" }}</small>
+</div>
+<div>
+    {{ partial "google_adsense.html" .Site.Params.GoogleAdsense.Link }}
+</div>
+<div class="post-content">
+{{ .Content }}
+</div>
+
+
+
+
+

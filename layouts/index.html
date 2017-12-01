@@ -1,0 +1,25 @@
+{{ define "main" }}
+{{ "<!-- 1st row -->" | safeHTML }}
+<div class="container">
+    <div class="row">
+        <div class="col-sm">
+            {{ partial "google_adsense.html" .Site.Params.GoogleAdsense.Banner }}
+        </div>
+        <div class="col-sm">
+            {{ partial "home_recent_posts.html" . }}
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+         <div class="col-sm">
+             {{ partial "google_adsense.html" .Site.Params.GoogleAdsense.Center }}
+         </div>
+    </div>
+    <hr>
+    <div class="row">
+        {{ partial "home_cards.html" . }}
+    </div>
+</div>
+
+
+{{ end }}

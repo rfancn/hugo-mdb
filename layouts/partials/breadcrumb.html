@@ -1,0 +1,28 @@
+{{ $trimmedDir := strings.TrimSuffix "/" .Dir }}
+{{ $categories := split $trimmedDir "/" }}
+{{ $total := len $categories }}
+
+{{ if gt $total 0 }}
+
+{{ $lastIndex := sub $total 1 }}
+<nav class="breadcrumb">
+    <a class="breadcrumb-item" href="/">Home</a>
+    {{  range $i, $v := $categories }}
+            {{ if eq $i $lastIndex }}
+                <span class="breadcrumb-item active">{{ $v }}</span>
+            {{ else }}
+                {{ $firstPart := add $i 1 }}
+                {{ $subDirs := first $firstPart $categories }}
+                {{ $relUrl := delimit $subDirs "/" }}
+                <a class="breadcrumb-item" href="/{{ $relUrl }}">{{ $v }}</a>
+            {{ end }}
+    {{ end }}
+</nav>
+
+{{ else }}
+
+<nav class="breadcrumb">
+    <span class="breadcrumb-item active">Home</span>
+</nav>
+
+{{ end }}
