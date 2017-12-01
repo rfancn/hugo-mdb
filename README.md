@@ -3,6 +3,14 @@ Bootstrap material design them for Hugo, credits to:
 - [Material Design for Bootstrap 4](https://mdbootstrap.com/)
 - [Bootstrap](http://getbootstrap.com/)
 
+# Example
+
+Example site please check here: [HDGet](http://www.hdget.com)
+
+# Precondition
+
+As of Hugo 0.31, there is no `contains` operator implementation for `where` function. The theme mostly depends on `contains` operator to filter pages under different level of nested directories, detail information please refer to:[Hugo list all the pages under sub directories](http://www.hdget.com/hugo-list-pages-in-nested-dirs/)
+
 
 # Configuration
 
