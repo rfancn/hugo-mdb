@@ -6,7 +6,13 @@
         <div class="col-sm-9">
             {{ partial "breadcrumb.html" . }}
 
-            {{ $paginator := .Paginate ( where (where .Site.AllPages "Kind" "page") "Path" "contains" $currentDir ) }}
+            {{ if .Site.Params.languageNeutral }}
+                {{ $.Scratch.Set "listPages" (where .Site.AllPages "Kind" "page") }}
+            {{ else }}
+                {{ $.Scratch.Set "listPages" .Site.RegularPages }}
+            {{ end }}
+
+            {{ $paginator := .Paginate ( where ($.Scratch.Get "listPages") "Path" "contains" $currentDir ) }}
             {{ range $paginator.Pages }}
                 {{ partial "post_summary.html" . }}
             {{ end }}
@@ -15,8 +21,8 @@
             {{ partial "pagination.html" . }}
         </div>
         <div class="col-sm-3">
-            {{ partial "sidebar_adsense.html" . }}
             {{ partial "sidebar_site_tags.html" . }}
+            {{ partial "sidebar_adsense.html" . }}
         </div>
     </div>
 </div>
