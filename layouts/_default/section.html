@@ -12,7 +12,8 @@
                 {{ $.Scratch.Set "listPages" .Site.RegularPages }}
             {{ end }}
 
-            {{ $paginator := .Paginate ( where ($.Scratch.Get "listPages") "Path" "contains" $currentDir ) }}
+            {{ $listPages := where ($.Scratch.Get "listPages") "Path" "contains" $currentDir }}
+            {{ $paginator := .Paginate $listPages.ByDate.Reverse }}
             {{ range $paginator.Pages }}
                 {{ partial "post_summary.html" . }}
             {{ end }}

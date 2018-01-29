@@ -12,17 +12,17 @@
                     {{ if .HasChildren }}
                     <li class="nav-item btn-group">
                         <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            {{ .Name }}
+                            {{ i18n .Name }}
                         </a>
                         <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
                             {{ range .Children }}
-                                <a class="dropdown-item" href="{{ .URL }}">{{ .Name }}</a>
+                                <a class="dropdown-item" href="{{ .URL }}">{{ i18n .Name }}</a>
                             {{ end }}
                         </div>
                     </li>
                     {{ else }}
                     <li class="nav-item {{ if $currentPage.HasMenuCurrent "main" . }}active{{ end }}">
-                        <a class="nav-link" href="{{ .URL }}">{{ .Name }} <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="{{ .URL }}">{{ i18n .Name }} <span class="sr-only">(current)</span></a>
                     </li>
                     {{ end }}
                 {{ end }}

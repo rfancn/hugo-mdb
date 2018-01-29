@@ -1,10 +1,7 @@
-{{ $config := .Site.Params.HomeRecentPosts }}
-{{ if eq .Lang "zh" }}
-    {{ $posts := first $config.listSize (where .Site.AllPages "Kind" "page") }}
-    {{ partial "recent_posts.html" (dict "posts" $posts "config" $config) }}
-{{ else }}
-    {{ $posts := first $config.listSize .Site.RegularPages }}
-    {{ partial "recent_posts.html" (dict "posts" $posts "config" $config) }}
-{{ end }}
+{{ $listSize := .Site.Params.HomeRecentPosts.ListSize | default 10 }}
+{{ $defaultTruncateSize := .Site.Params.HomeRecentPosts.TruncateSize |default 30 }}
+{{ $cjkTruncateSize := .Site.Params.HomeRecentPosts.CjkTruncateSize | default $defaultTruncateSize }}
+{{ $posts := first $listSize .Site.RegularPages }}
 
+{{ partial "recent_posts.html" (dict "posts" $posts "defaultTruncateSize" $defaultTruncateSize "cjkTruncateSize" $cjkTruncateSize) }}
 

@@ -1,12 +1,20 @@
 {{ if .posts }}
-{{ $config := .config }}
+{{ $defaultTruncateSize := .defaultTruncateSize }}
+{{ $cjkTruncateSize := .cjkTruncateSize }}
 <ul class="list-unstyled">
     {{ range .posts }}
     <li>
         <a title="{{ .Title }}" href="{{ .URL | relLangURL }}">
             <!-- must use 2006-01-02T15:04:05Z07:00 layout -->
             <small>[{{ .Date.Format "2006-01-02" }}]</small>
-            <span>{{ .Title | truncate (index $config.truncatesize .Lang) }}</span>
+            {{ $wordsNum := countwords .Title }}
+            {{ $runesNum := countrunes .Title }}
+            <!-- if wordsNum == runesNum then it is title contains CJK -->
+            {{ if eq $wordsNum $runesNum }}
+            <span>{{ .Title | truncate  $cjkTruncateSize }}</span>
+            {{ else }}
+            <span>{{ .Title | truncate  $defaultTruncateSize }}</span>
+            {{ end }}
         </a>
     </li>
     {{ end }}

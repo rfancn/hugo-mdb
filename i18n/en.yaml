@@ -16,3 +16,9 @@
   translation: Tags
 - id: SIDEBAR_HEADER_CATEGORIES
   translation: Categories
+- id: MENU_MAIN_READING
+  translation: Reading
+- id: MENU_MAIN_BLOG
+  translation: Blog
+- id: MENU_MAIN_PROJECT
+  translation: Project
