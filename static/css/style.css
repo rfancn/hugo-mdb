@@ -70,6 +70,14 @@ footer.page-footer {
 .post-content img[src$='#img-fluid'] {
     max-width: 100%;
     height: auto;
+    text-align: center;
+}
+
+.post-content ul li img[src$='#img-fluid'] {
+    display:block;
+    margin:0 auto;
+    max-width: 100%;
+    height: auto;
 }
 
 .post-content blockquote {
